@@ -7,6 +7,7 @@
 
 import Foundation
 import Vapor
+
 struct ProductCollectionRequest: Content {
     let page_number: Int
     let id_category: Int
