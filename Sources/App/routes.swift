@@ -17,8 +17,9 @@ func routes(_ app: Application) throws {
     productsGroup.post("one", use: productController.one)
     
     let productReviewController = ProductReviewController()
-    productsGroup.get(":productId", "reviews", use: productReviewController.getList)
-    productsGroup.post(":productId", "reviews", use: productReviewController.create)
-    productsGroup.post(":productId", "reviews", "approve", use: productReviewController.approve)
-    productsGroup.delete(":productId", "reviews", use: productReviewController.delete)
+    
+    app.get("reviews", use: productReviewController.getList)
+    app.post("reviews", use: productReviewController.create)
+    app.post("reviews", "approve", use: productReviewController.approve)
+    app.delete("reviews", use: productReviewController.delete)
 }
