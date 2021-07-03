@@ -21,5 +21,5 @@ func routes(_ app: Application) throws {
     app.get("reviews", use: productReviewController.getList)
     app.post("reviews", use: productReviewController.create)
     app.post("reviews", "approve", use: productReviewController.approve)
-    app.delete("reviews", use: productReviewController.delete)
+    app.post("reviews", "delete", use: productReviewController.delete)
 }
