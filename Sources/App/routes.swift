@@ -22,4 +22,9 @@ func routes(_ app: Application) throws {
     app.post("reviews", use: productReviewController.create)
     app.post("reviews", "approve", use: productReviewController.approve)
     app.post("reviews", "delete", use: productReviewController.delete)
+    
+    let basketController = BasketController()
+    
+    app.post("basket", "add", use: basketController.add)
+    app.post("basket", "remove", use: basketController.remove)
 }
